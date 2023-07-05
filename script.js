@@ -10,7 +10,7 @@ function generatePassword() {
 
   // Variable that will be used to obtain the password length.
 
-  var Length = getPasswordLength();
+  var Length = getLength();
 
   // Empty array that will be used to store the arrays above.
 
@@ -22,45 +22,45 @@ function generatePassword() {
   var upper = confirm("Would you like your password to contain any uppercase letters?");
   var lower = confirm("Would you like your password to contain any lowercase letters?");
   var num = confirm("Would you like your password to contain any numbers?");
-}
+
   // Function ensures the user creates a password between 8-128 characters. 
   //It also makes sure the user enter a number and not a letter resetting it back to zero if it is a letter.
 
-function getPasswordLength() {
-  var characterLength = 0;
-  while ((characterLength < 8) || (characterLength > 128)) {
-    characterLength = prompt("Password should be between 8 - 128 characters");
+  function getLength() {
+    var characterLength = 0;
+    while ((characterLength < 8) || (characterLength > 128)) {
+      characterLength = prompt("Password should be between 8 - 128 characters");
 
-    if (isNaN(characterLength)) {
-      characterLength = 0;
+      if (isNaN(characterLength)) {
+        characterLength = 0;
+      }
     }
-  }
   
-  return characterLength;
-}
-  // Applying all the character arrays into the empty array that was created.
+    return characterLength;
+  }
+  // Creating an array that will be used to generate the password by randomly selecting from it.
 
-if (special) {
-  emptyArray = emptyArray.concat(specialCharacters);
-}
+  if (special) {
+    emptyArray = emptyArray.concat(specialCharacters);
+  }
 
-if (upper) {
-  emptyArray = emptyArray.concat(upperCaseLetters);
-}
+  if (upper) {
+    emptyArray = emptyArray.concat(upperCaseLetters);
+  }
 
-if (lower) {
-  emptyArray = emptyArray.concat(lowerCaseLetters);
-}
+  if (lower) {
+    emptyArray = emptyArray.concat(lowerCaseLetters);
+  }
 
-if (num) {
-  emptyArray = emptyArray.concat(number);
-}
+  if (num) {
+    emptyArray = emptyArray.concat(number);
+  }
 
-var passwordDisplay = "";
-for (var i = 0; i < Length; i++) {
-  passwordDisplay = emptyArray[Math.floor(Math.random() * (emptyArray.length))];
+  var passwordDisplay = "";
+  for (var i = 0; i < Length; i++) {
+    passwordDisplay = emptyArray[Math.floor(Math.random() * (emptyArray.length))];
+  } 
 }
-
 // Get references to the #generate element
 
 var generateBtn = document.querySelector("#generate");
