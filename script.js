@@ -29,7 +29,7 @@ function generatePassword() {
   function getLength() {
     var characterLength = 0;
     while ((characterLength < 8) || (characterLength > 128)) {
-      characterLength = prompt("Password should be between 8 - 128 characters");
+      characterLength = prompt("Password should be between 8 - 128 characters.");
 
       if (isNaN(characterLength)) {
         characterLength = 0;
