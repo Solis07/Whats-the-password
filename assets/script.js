@@ -58,7 +58,7 @@ function generatePassword() {
   }
 
   // Loop will generate a random password based upon the users choices.
-  
+
   var passwordDisplay = "";
   for (var i = 0; i < Length; i++) {
     passwordDisplay += passwordArray[Math.floor(Math.random() * (passwordArray.length))];
