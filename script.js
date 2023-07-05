@@ -55,7 +55,7 @@ function generatePassword() {
   if (num) {
     emptyArray = emptyArray.concat(number);
   }
-  // Loop that will generate a random password based upon the users choices.
+  // Loop will generate a random password based upon the users choices.
 
   var passwordDisplay = "";
   for (var i = 0; i < Length; i++) {
