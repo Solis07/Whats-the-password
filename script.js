@@ -14,7 +14,7 @@ function generatePassword() {
 
   // Empty array that will be used to store the arrays above and allow for characters to be selected at random.
 
-  var emptyArray = [];
+  var passwordArray = [];
 
   // Allows users to confirm what characters they want in their password.
 
@@ -41,26 +41,27 @@ function generatePassword() {
   // Creating an array that will be used to generate the password by randomly selecting from it.
 
   if (special) {
-    emptyArray = emptyArray.concat(specialCharacters);
+    passwordArray = passwordArray.concat(specialCharacters);
   }
 
   if (upper) {
-    emptyArray = emptyArray.concat(upperCaseLetters);
+    passwordArray = passwordArray.concat(upperCaseLetters);
   }
 
   if (lower) {
-    emptyArray = emptyArray.concat(lowerCaseLetters);
+    passwordArray = passwordArray.concat(lowerCaseLetters);
   }
 
   if (num) {
-    emptyArray = emptyArray.concat(number);
+    passwordArray = passwordArray.concat(number);
   }
   // Loop will generate a random password based upon the users choices.
 
   var passwordDisplay = "";
   for (var i = 0; i < Length; i++) {
-    passwordDisplay = emptyArray[Math.floor(Math.random() * (emptyArray.length))];
+    passwordDisplay += passwordArray[Math.floor(Math.random() * (passwordArray.length))];
   } 
+  return passwordDisplay;
 }
 
 // Get references to the #generate element
