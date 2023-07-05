@@ -1,4 +1,4 @@
-// Assignment code here
+  // Assignment code here
 function generatePassword() {
 
   // Created arrays for every character type able to be used within the password parameters.
@@ -56,8 +56,9 @@ function generatePassword() {
   if (number) {
     passwordArray = passwordArray.concat(numberSet);
   }
-  // Loop will generate a random password based upon the users choices.
 
+  // Loop will generate a random password based upon the users choices.
+  
   var passwordDisplay = "";
   for (var i = 0; i < Length; i++) {
     passwordDisplay += passwordArray[Math.floor(Math.random() * (passwordArray.length))];
