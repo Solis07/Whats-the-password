@@ -8,6 +8,26 @@ function generatePassword() {
   var lowerCaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   var numberSet = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
+  // Variable that will be used to obtain the password length.
+
+  var Length = getLength();
+
+  // Function ensures the user creates a password between 8-128 characters. 
+  //It also makes sure the user enters a number value and not a letter resetting it back to zero if it is a letter.
+
+  function getLength() {
+    var characterLength = 0;
+    while ((characterLength < 8) || (characterLength > 128)) {
+      characterLength = prompt("Password should be between 8 - 128 characters.");
+
+      if (isNaN(characterLength)) {
+        characterLength = 0;
+      }
+    }
+  
+    return characterLength;
+  }
+
   // Empty array that will be used to store the arrays above and allow for characters to be selected at random.
 
   var passwordArray = [];
@@ -35,26 +55,6 @@ function generatePassword() {
 
   if (number) {
     passwordArray = passwordArray.concat(numberSet);
-  }
-
-  // Variable that will be used to obtain the password length.
-
-  var Length = getLength();
-
-  // Function ensures the user creates a password between 8-128 characters. 
-  //It also makes sure the user enters a number value and not a letter resetting it back to zero if it is a letter.
-
-  function getLength() {
-    var characterLength = 0;
-    while ((characterLength < 8) || (characterLength > 128)) {
-      characterLength = prompt("Password should be between 8 - 128 characters.");
-
-      if (isNaN(characterLength)) {
-        characterLength = 0;
-      }
-    }
-  
-    return characterLength;
   }
 
   // Loop will generate a random password based upon the users choices.
