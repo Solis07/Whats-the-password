@@ -8,10 +8,6 @@ function generatePassword() {
   var lowerCaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   var numberSet = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
-  // Empty array that will be used to store the arrays above and allow for characters to be selected at random.
-
-  var passwordArray = [];
-
   // Variable that will be used to obtain the password length.
 
   var Length = getLength();
@@ -31,6 +27,10 @@ function generatePassword() {
   
     return characterLength;
   }
+
+  // Empty array that will be used to store the arrays above and allow for characters to be selected at random.
+
+  var passwordArray = [];
 
   // Allows users to confirm what characters they want in their password.
 
