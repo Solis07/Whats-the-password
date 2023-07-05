@@ -12,7 +12,7 @@ function generatePassword() {
 
   var Length = getLength();
 
-  // Empty array that will be used to store the arrays above.
+  // Empty array that will be used to store the arrays above and allow for characters to be selected at random.
 
   var emptyArray = [];
 
@@ -24,7 +24,7 @@ function generatePassword() {
   var num = confirm("Would you like your password to contain any numbers?");
 
   // Function ensures the user creates a password between 8-128 characters. 
-  //It also makes sure the user enter a number and not a letter resetting it back to zero if it is a letter.
+  //It also makes sure the user enters a number value and not a letter resetting it back to zero if it is a letter.
 
   function getLength() {
     var characterLength = 0;
@@ -55,12 +55,14 @@ function generatePassword() {
   if (num) {
     emptyArray = emptyArray.concat(number);
   }
+  // Loop that will generate a random password based upon the users choices.
 
   var passwordDisplay = "";
   for (var i = 0; i < Length; i++) {
     passwordDisplay = emptyArray[Math.floor(Math.random() * (emptyArray.length))];
   } 
 }
+
 // Get references to the #generate element
 
 var generateBtn = document.querySelector("#generate");
