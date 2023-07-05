@@ -1,7 +1,7 @@
-  // Assignment code here
+// Assignment code here
 function generatePassword() {
 
-  // Created arrays for every character type able to be used within the password parameters.
+// Created arrays for every character type able to be used within the password parameters.
 
   var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "=", "+", "[", "]", "{", "}", "|", ";", ":", "?", "/", "<", ">", ".", ",", "~"];
   var upperCaseLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
@@ -12,8 +12,8 @@ function generatePassword() {
 
   var Length = getLength();
 
-  // Function ensures the user creates a password between 8-128 characters. 
-  //It also makes sure the user enters a number value and not a letter resetting it back to zero if it is a letter.
+// Function ensures the user creates a password between 8-128 characters. 
+//It also makes sure the user enters a number value and not a letter resetting it back to zero if it is a letter.
 
   function getLength() {
     var characterLength = 0;
@@ -28,18 +28,18 @@ function generatePassword() {
     return characterLength;
   }
 
-  // Empty array that will be used to store the arrays above and allow for characters to be selected at random.
+// Empty array that will be used to store the arrays above and allow for characters to be selected at random.
 
   var passwordArray = [];
 
-  // Allows users to confirm what characters they want in their password.
+// Allows users to confirm what characters they want in their password.
 
   var special = confirm("Would you like your password to contain any special characters?");
   var upper = confirm("Would you like your password to contain any uppercase letters?");
   var lower = confirm("Would you like your password to contain any lowercase letters?");
   var number = confirm("Would you like your password to contain any numbers?");
 
-  // Creating an array that will be used to generate the password by randomly selecting from it.
+// Creating an array that will be used to generate the password by randomly selecting from it.
 
   if (special) {
     passwordArray = passwordArray.concat(specialCharacters);
@@ -57,7 +57,7 @@ function generatePassword() {
     passwordArray = passwordArray.concat(numberSet);
   }
 
-  // Loop will generate a random password based upon the users choices.
+// Loop will generate a random password based upon the users choices.
 
   var passwordDisplay = "";
   for (var i = 0; i < Length; i++) {
