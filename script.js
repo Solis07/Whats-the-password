@@ -10,7 +10,7 @@ function generatePassword() {
 
   // Variable that will be used to obtain the password length.
 
-  var passwordLength = getPasswordLength();
+  var Length = getPasswordLength();
 
   // Empty array that will be used to store the arrays above.
 
@@ -56,9 +56,9 @@ if (num) {
   emptyArray = emptyArray.concat(number);
 }
 
-var passWord = "";
-for (var i = 0; i < passwordLength; i++) {
-  passWord = emptyArray[Math.floor(Math.random() * (emptyArray.length))];
+var passwordDisplay = "";
+for (var i = 0; i < Length; i++) {
+  passwordDisplay = emptyArray[Math.floor(Math.random() * (emptyArray.length))];
 }
 
 // Get references to the #generate element
