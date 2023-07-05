@@ -8,9 +8,11 @@ function generatePassword() {
   var lowerCaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   var number = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
+  // Variable that will be used to obtain the password length.
+
   var passwordLength = getPasswordLength();
 
-  // empty array that will be used to store the arrays above.
+  // Empty array that will be used to store the arrays above.
 
   var emptyArray = [];
 
@@ -27,7 +29,7 @@ function generatePassword() {
 function getPasswordLength() {
   var characterLength = 0;
   while ((characterLength < 8) || (characterLength > 128)) {
-    characterLength = window.prompt("Password should be between 8 - 128 characters");
+    characterLength = prompt("Password should be between 8 - 128 characters");
 
     if (isNaN(characterLength)) {
       characterLength = 0;
@@ -54,8 +56,9 @@ if (num) {
   emptyArray = emptyArray.concat(number);
 }
 
+var passWord = "";
 for (var i = 0; i < passwordLength; i++) {
-  
+  passWord = emptyArray[Math.floor(Math.random() * (emptyArray.length))];
 }
 
 // Get references to the #generate element
